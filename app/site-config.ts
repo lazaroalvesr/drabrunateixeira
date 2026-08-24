@@ -1,4 +1,4 @@
-const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://brunateixeiraadv.com.br/';
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://brunateixeiraadv.com.br/';
 
 export const siteUrl = configuredSiteUrl.replace(/\/$/, '');
 
