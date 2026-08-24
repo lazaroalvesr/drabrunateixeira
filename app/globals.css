@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+.font-\[\'Display\'\] {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #D1AD7D99 #F3F3F3;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F3F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1AD7D99;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0A0A0A;
+}
+
+@keyframes reveal-item {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes testimonial-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes testimonial-progress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 6px 18px #10243b40, 0 0 0 3px #D1AD7D48, 0 0 0 0 #0A0A0A66; }
+  48% { box-shadow: 0 6px 18px #10243b40, 0 0 0 3px #D1AD7D48, 0 0 0 13px transparent; }
+}
+
+@keyframes menu-drop-in {
+  from { opacity: 0; transform: translateY(-16px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes menu-drop-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-16px) scale(.98); }
+}
+
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlay-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.reveal-item { opacity: 0; transform: translateY(30px); }
+.reveal-section.is-visible .reveal-item { animation: reveal-item .75s cubic-bezier(.2,.7,.2,1) forwards; }
+.reveal-section.is-visible .reveal-delay-1 { animation-delay: .1s; }
+.reveal-section.is-visible .reveal-delay-2 { animation-delay: .2s; }
+.reveal-section.is-visible .reveal-delay-3 { animation-delay: .3s; }
+.reveal-section.is-visible .reveal-delay-4 { animation-delay: .4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item { opacity: 1; transform: none; }
+  .reveal-section.is-visible .reveal-item { animation: none; }
+}
