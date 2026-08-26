@@ -32,7 +32,7 @@ export function Testimonials() {
   const item = testimonials[current];
 
   return (
-    <section className="reveal-section bg-[#F3F3F3] px-6 py-20 md:px-[max(6vw,40px)] lg:py-24">
+    <section className="reveal-section bg-[#F3F3F3] px-6 py-20 md:px-[max(6vw,40px)] md:py-14 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-16 lg:gap-24">
 
         <div className="reveal-item">
@@ -72,7 +72,7 @@ export function Testimonials() {
         >
           <div
             key={item.name}
-            className="animate-[testimonial-enter_.55s_cubic-bezier(.2,.7,.2,1)] flex h-100 flex-col overflow-hidden rounded-2xl border border-[#0A0A0A]/8 bg-white px-7 py-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)] motion-reduce:animate-none sm:h-90 sm:px-9 sm:py-9 md:px-10 md:py-10"
+            className="animate-[testimonial-enter_.55s_cubic-bezier(.2,.7,.2,1)] flex h-100 flex-col overflow-hidden rounded-2xl border border-[#0A0A0A]/8 bg-white px-7 py-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)] motion-reduce:animate-none sm:h-90 sm:px-9 sm:py-9 md:h-100 md:px-10 md:py-10"
           >
             <span
               aria-hidden="true"
@@ -82,7 +82,7 @@ export function Testimonials() {
             </span>
 
             <div className="flex flex-1 flex-col">
-              <blockquote className="mt-5 font-['Display'] text-[18px] font-medium italic leading-[1.6] tracking-[-0.1px] text-[#0A0A0A] sm:text-[19px] md:text-[20px]">
+              <blockquote className="mt-5 font-['Display'] text-[18px] font-medium italic leading-[1.6] tracking-[-0.1px] text-[#0A0A0A] sm:text-[19px] md:text-[20px] lg:text-[20px]">
                 {item.quote}
               </blockquote>
 

@@ -8,7 +8,7 @@ export function PracticeAreasSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="atuacao" className="reveal-section bg-[#0A0A0A] px-5.5 py-20 text-[#f7f4ee] md:px-[max(6vw,40px)] md:py-30">
+    <section id="atuacao" className="reveal-section bg-[#0A0A0A] px-5.5 py-20 text-[#f7f4ee] md:px-[max(6vw,40px)] md:py-18 lg:py-30 rounded-t-[30px]">
       <div className="mx-auto max-w-7xl">
         <div className="reveal-item mb-13.5 flex flex-col gap-5.5 md:flex-row md:items-end md:justify-between">
           <div>

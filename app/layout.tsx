@@ -22,7 +22,7 @@ const locationLabel = `${primaryOffice.city} - ${primaryOffice.state}`;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `Dra. Bruna Teixeira Cardoso | Advocacia Previdenciária em ${locationLabel}`,
+    default: 'Dra. Bruna Teixeira Cardoso | Advocacia Previdenciária',
     template: '%s | Dra. Bruna Teixeira Cardoso',
   },
   description: `Advocacia previdenciária em ${locationLabel}, com atendimento próximo, responsável e estratégico, presencial e on-line para todo o Brasil.`,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: `Advocacia previdenciária em ${locationLabel}, com atendimento presencial e on-line para todo o Brasil.`,
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: `Dra. Bruna Teixeira Cardoso | Advocacia Previdenciária em ${locationLabel}`,
     description: `Advocacia previdenciária em ${locationLabel}, com atendimento presencial e on-line para todo o Brasil.`,
   },

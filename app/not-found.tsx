@@ -30,7 +30,7 @@ export default function NotFound() {
             O endere&ccedil;o pode estar incorreto ou o conte&uacute;do pode ter sido movido. Vamos te levar para o lugar certo.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/" className="inline-flex min-h-13 items-center justify-center rounded-lg bg-[#0A0A0A] px-6 text-[15px] font-medium text-white transition hover:-translate-y-0.5 hover:bg-[#123A34]">
+            <Link href="/" className="inline-flex min-h-13 items-center justify-center rounded-lg bg-[#0A0A0A] px-6 text-[15px] font-medium text-white transition hover:-translate-y-0.5 hover:bg-[#2A2318]">
               Voltar ao in&iacute;cio
             </Link>
           </div>

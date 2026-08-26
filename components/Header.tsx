@@ -183,25 +183,13 @@ export function Header() {
           height={495}
           priority
           sizes="(max-width: 767px) 88px, 110px"
-          className="h-10 w-auto md:h-12"
+          className="h-9 w-auto md:h-12"
         />
-        <p className="font-['Display'] text-[15px] font-semibold leading-tight text-[#0A0A0A] md:text-[17px]">Bruna Teixeira Cardoso</p>
+        <p className="font-['Display'] text-[15px] font-semibold leading-tight text-[#0A0A0A] md:text-[17px]">
+          <span className="md:hidden">Bruna Teixeira</span>
+          <span className="hidden md:inline">Bruna Teixeira Cardoso</span>
+        </p>
       </Link>
-      <button className="relative z-40 flex h-10 w-10 items-center justify-center p-0 text-[#0A0A0A] xl:hidden" aria-expanded={open} aria-controls="main-menu" aria-label={open && !isClosing ? 'Fechar menu' : 'Abrir menu'} onClick={toggleMenu}>
-        <span className="relative flex h-4.5 w-6 flex-col items-center justify-between">
-          <span className={`h-0.5 w-full rounded-full bg-current transition-transform duration-300 ease-in-out ${open && !isClosing ? 'translate-y-2 rotate-45' : ''}`} />
-          <span className={`h-0.5 w-full rounded-full bg-current transition-opacity duration-200 ease-in-out ${open && !isClosing ? 'opacity-0' : 'opacity-100'}`} />
-          <span className={`h-0.5 w-full rounded-full bg-current transition-transform duration-300 ease-in-out ${open && !isClosing ? '-translate-y-2 -rotate-45' : ''}`} />
-        </span>
-      </button>
-      {open && (
-        <button
-          type="button"
-          aria-label="Fechar menu"
-          onClick={() => closeMenu()}
-          className={`fixed inset-x-0 top-19 z-20 bg-black/50 xl:hidden ${isClosing ? 'animate-[overlay-fade-out_.36s_ease_forwards]' : 'animate-[overlay-fade-in_.24s_ease-out_forwards]'} h-[calc(100dvh-76px)] md:top-22 md:h-[calc(100dvh-88px)]`}
-        />
-      )}
       <nav id="main-menu" className={`${open ? `absolute inset-x-3 top-full z-30 mt-3 flex max-h-[calc(100dvh-108px)] flex-col gap-5 overflow-y-auto rounded-[28px] bg-white px-7 py-8 shadow-[0_20px_44px_rgba(10,10,10,.18)] ${isClosing ? 'animate-[menu-drop-out_.3s_ease_forwards]' : 'animate-[menu-drop-in_.32s_cubic-bezier(.2,.75,.25,1)_forwards]'}` : 'hidden'} xl:static xl:mt-0 xl:flex xl:max-h-none xl:w-auto xl:flex-row xl:items-center xl:gap-8.75 xl:overflow-visible xl:rounded-none xl:bg-transparent xl:p-0 xl:shadow-none`}>
         {links.map(([label, href]) => {
           const isHashLink = href.startsWith('#');
@@ -219,11 +207,31 @@ export function Header() {
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#0A0A0A] text-white"><ArrowUpRight size={18} /></span>
         </Link>
       </nav>
+      <div className="flex items-center gap-2 xl:hidden">
+        <Link className="flex shrink-0 items-center rounded-full bg-[#D1AD7D] px-4 py-2 text-[12px] font-medium text-white transition hover:bg-[#c8a273]" href={`https://wa.me/${contactDetails.whatsappNumber}?text=${encodeURIComponent(contactDetails.whatsappMessage)}`} target="_blank" rel="noreferrer">
+          Agendar
+        </Link>
+        <button className="relative z-40 flex h-9 w-9 shrink-0 items-center justify-center p-0 text-[#0A0A0A]" aria-expanded={open} aria-controls="main-menu" aria-label={open && !isClosing ? 'Fechar menu' : 'Abrir menu'} onClick={toggleMenu}>
+          <span className="relative flex h-4.5 w-6 flex-col items-center justify-between">
+            <span className={`h-0.5 w-full rounded-full bg-current transition-transform duration-300 ease-in-out ${open && !isClosing ? 'translate-y-2 rotate-45' : ''}`} />
+            <span className={`h-0.5 w-full rounded-full bg-current transition-opacity duration-200 ease-in-out ${open && !isClosing ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`h-0.5 w-full rounded-full bg-current transition-transform duration-300 ease-in-out ${open && !isClosing ? '-translate-y-2 -rotate-45' : ''}`} />
+          </span>
+        </button>
+      </div>
       <Link className="hidden items-center gap-4 rounded-full bg-[#D1AD7D] py-1.5 pl-6 pr-1.5 text-[14px] font-medium text-[#0A0A0A] transition hover:-translate-y-0.5 hover:bg-[#c8a273] xl:flex" href={`https://wa.me/${contactDetails.whatsappNumber}?text=${encodeURIComponent(contactDetails.whatsappMessage)}`} target="_blank" rel="noreferrer">
         Agendar consulta
         <span className="grid h-10 w-10 place-items-center rounded-full bg-[#0A0A0A] text-white"><ArrowUpRight size={18} /></span>
       </Link>
     </header>
+    {open && (
+      <button
+        type="button"
+        aria-label="Fechar menu"
+        onClick={() => closeMenu()}
+        className={`fixed inset-0 z-20 bg-[#0A0A0A]/55 xl:hidden ${isClosing ? 'animate-[overlay-fade-out_.36s_ease_forwards]' : 'animate-[overlay-fade-in_.24s_ease-out_forwards]'}`}
+      />
+    )}
     </>
   );
 }

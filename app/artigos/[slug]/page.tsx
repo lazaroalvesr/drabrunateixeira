@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   if (!article) return {};
 
   return {
-    title: article.title,
+    title: { absolute: article.title },
     description: article.excerpt,
     alternates: { canonical: `/artigos/${article.slug}` },
     openGraph: {
@@ -52,6 +52,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     datePublished: article.date,
     image: article.coverImage ? [absoluteUrl(article.coverImage)] : undefined,
     url: absoluteUrl(`/artigos/${article.slug}`),
+    author: { '@type': 'Person', name: 'Dra. Bruna Teixeira Cardoso', url: absoluteUrl('/') },
   };
 
   return (

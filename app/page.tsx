@@ -19,6 +19,7 @@ const legalServiceJsonLd = {
   url: absoluteUrl('/'),
   telephone: contactDetails.phoneE164,
   email: contactDetails.email,
+  sameAs: ['https://www.instagram.com/brunateixeira.advocacia/'],
   address: {
     '@type': 'PostalAddress',
     streetAddress: contactDetails.address,

@@ -14,14 +14,34 @@ export function WhatsAppButton() {
 
   useEffect(() => {
     const hero = document.getElementById('inicio');
-    if (!hero) {
-      setVisible(true);
-      return;
+    const footer = document.querySelector('footer');
+
+    let pastHero = !hero;
+    let footerInView = false;
+    const updateVisibility = () => setVisible(pastHero && !footerInView);
+
+    const observers: IntersectionObserver[] = [];
+
+    if (hero) {
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        pastHero = !entry.isIntersecting;
+        updateVisibility();
+      }, { threshold: 0 });
+      heroObserver.observe(hero);
+      observers.push(heroObserver);
     }
 
-    const observer = new IntersectionObserver(([entry]) => setVisible(!entry.isIntersecting), { threshold: 0 });
-    observer.observe(hero);
-    return () => observer.disconnect();
+    if (footer) {
+      const footerObserver = new IntersectionObserver(([entry]) => {
+        footerInView = entry.isIntersecting;
+        updateVisibility();
+      }, { threshold: 0 });
+      footerObserver.observe(footer);
+      observers.push(footerObserver);
+    }
+
+    updateVisibility();
+    return () => observers.forEach((observer) => observer.disconnect());
   }, []);
 
   useEffect(() => {

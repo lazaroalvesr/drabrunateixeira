@@ -10,7 +10,7 @@ export function ArticlesSection() {
   const latest = [...articles].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3);
 
   return (
-    <section id='artigos' className="reveal-section bg-[#F3F3F3] px-5.5 py-20 md:px-[max(6vw,40px)] md:py-28">
+    <section id='artigos' className="reveal-section bg-[#F3F3F3] px-5.5 py-20 md:px-[max(6vw,40px)] md:py-16 lg:py-28">
       <div className="mx-auto max-w-7xl">
         <div className="reveal-item mb-13.5 flex flex-col gap-5.5 md:flex-row md:items-end md:justify-between">
           <div>
@@ -25,7 +25,7 @@ export function ArticlesSection() {
         {latest.length === 0 ? (
           <p className="max-w-[65ch] text-[16px] leading-[1.6] text-[#52605c] md:text-[18px]">Em breve, novos artigos por aqui.</p>
         ) : (
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {latest.map((article) => (
               <Link
                 key={article.slug}

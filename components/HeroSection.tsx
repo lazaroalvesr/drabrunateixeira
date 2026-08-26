@@ -12,12 +12,12 @@ const heroStats = [
 
 export function HeroSection() {
   return (
-    <section id="inicio" className="reveal-section bg-[#0A0A0A] pb-3 md:pb-4">
+    <section id="inicio" className="reveal-section bg-[#0A0A0A] pb-3 md:pb-4 lg:h-245 h-210 md:h-270">
       <div className="pointer-events-none absolute right-0 -top-70 h-170 w-140 rounded-full bg-[#D1AD7D]/30 blur-[120px]" />
       <div className="relative mx-3 mt-0 pt-28 flex flex-col overflow-hidden rounded-[28px] md:mx-6 lg:max-w-7xl lg:mx-auto">
         <div className="relative grid gap-6 px-6 pb-10 pt-28 md:grid-cols-[1.4fr_.6fr] md:grid-rows-[1fr] md:flex-1 md:gap-8 md:px-10 md:pt-32 lg:px-14">
-          <div className="reveal-item relative z-10 md:mt-0 mt-30 items-center md:items-start flex flex-col w-full justify-center pb-2 md:pb-16">
-            <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 md:bg-white/5 bg-black/40 px-4 py-2 text-[12px] font-medium tracking-[.3px] text-white">
+          <div className="reveal-item relative z-10 md:mt-0 mt-40 items-center md:items-start flex flex-col w-full justify-center pb-2 md:pb-16">
+            <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-[#0A0A0A] px-4 py-2 text-[12px] font-medium tracking-[.3px] text-white">
               <ShieldCheck size={16} className="text-[#D1AD7D]" /> {contactDetails.oab}
             </span>
             <h1 className="mb-6 font-['Display'] w-full md:text-start text-center text-nowrap text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] text-white md:text-[42px] lg:text-[72px]">
@@ -28,9 +28,9 @@ export function HeroSection() {
               Advogada especialista em Direito Previdenciário, com escritório em Divinópolis/MG e atendimento on-line em todo o Brasil. Aposentadorias, auxílios e BPC/LOAS, no INSS e na via judicial.
             </p>
             <div className="mt-8">
-              <Link className="inline-flex items-center gap-4 rounded-full bg-white py-1.5 pl-6 pr-1.5 text-[14px] font-medium text-[#0A0A0A] transition hover:-translate-y-0.5" href={`https://wa.me/${contactDetails.whatsappNumber}?text=${encodeURIComponent(contactDetails.whatsappMessage)}`} target="_blank" rel="noreferrer">
+              <Link className="inline-flex items-center gap-4 rounded-full bg-white py-2.5 pl-8 pr-2.5 text-[16px] font-medium text-[#0A0A0A] transition hover:-translate-y-0.5 md:text-[17px]" href={`https://wa.me/${contactDetails.whatsappNumber}?text=${encodeURIComponent(contactDetails.whatsappMessage)}`} target="_blank" rel="noreferrer">
                 Falar com a Dra. Bruna
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-[#D1AD7D] text-[#0A0A0A]"><ArrowUpRight size={18} /></span>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#D1AD7D] text-[#0A0A0A]"><ArrowUpRight size={20} /></span>
               </Link>
             </div>
           </div>
@@ -47,13 +47,13 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 gap-3 px-6 pb-8 md:grid-cols-2 lg:grid-cols-4 md:gap-4 md:px-10 md:pb-10 lg:px-14">
+        <div className="relative z-10 hidden md:grid md:grid-cols-2 md:gap-4 md:px-10 md:pb-10 lg:grid-cols-4 lg:px-14">
           {heroStats.map((stat) => (
-            <div key={stat.label} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-5">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#D1AD7D]/15 text-[#D1AD7D]"><stat.icon size={19} /></span>
+            <div key={stat.label} className="flex items-center gap-2.5 rounded-2xl border border-white/10 bg-white/5 px-3.5 py-4 md:gap-3 md:px-5 md:py-5">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#D1AD7D]/15 text-[#D1AD7D] md:h-11 md:w-11"><stat.icon size={17} /></span>
               <span className="flex flex-col">
-                <span className="font-['Display'] text-[20px] font-semibold leading-none text-white">{stat.value}</span>
-                <span className="mt-1 text-[12px] font-medium leading-snug text-white/80">{stat.label}</span>
+                <span className="font-['Display'] text-[17px] font-semibold leading-none text-white md:text-[20px]">{stat.value}</span>
+                <span className="mt-1 text-[11px] font-medium leading-snug text-white/80 md:text-[12px]">{stat.label}</span>
               </span>
             </div>
           ))}
