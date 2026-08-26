@@ -72,7 +72,7 @@ export function Testimonials() {
         >
           <div
             key={item.name}
-            className="animate-[testimonial-enter_.55s_cubic-bezier(.2,.7,.2,1)] flex h-100 flex-col overflow-hidden rounded-2xl border border-[#0A0A0A]/8 bg-white px-7 py-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)] motion-reduce:animate-none sm:h-90 sm:px-9 sm:py-9 md:h-100 md:px-10 md:py-10"
+            className="animate-[testimonial-enter_.55s_cubic-bezier(.2,.7,.2,1)] flex min-h-84 flex-col rounded-2xl border border-[#0A0A0A]/8 bg-white px-7 py-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)] motion-reduce:animate-none sm:px-9 sm:py-9 md:px-10 md:py-10"
           >
             <span
               aria-hidden="true"
@@ -81,12 +81,12 @@ export function Testimonials() {
               “
             </span>
 
-            <div className="flex flex-1 flex-col">
-              <blockquote className="mt-5 font-['Display'] text-[18px] font-medium italic leading-[1.6] tracking-[-0.1px] text-[#0A0A0A] sm:text-[19px] md:text-[20px] lg:text-[20px]">
+            <div className="flex flex-col">
+              <blockquote className="mt-5 font-['Display'] text-[17px] font-medium italic leading-[1.6] tracking-[-0.1px] text-[#0A0A0A] sm:text-[19px] md:text-[20px] lg:text-[20px]">
                 {item.quote}
               </blockquote>
 
-              <figcaption className="mt-auto flex shrink-0 items-center gap-3 border-t border-[#0A0A0A]/8 pt-5 text-[13px] text-[#0A0A0A]">
+              <figcaption className="mt-6 flex shrink-0 items-center gap-3 border-t border-[#0A0A0A]/8 pt-5 text-[13px] text-[#0A0A0A]">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#D1AD7D]/15 font-['Display'] text-[13px] font-semibold text-[#A07E4A]" aria-hidden="true">
                   {getInitials(item.name)}
                 </span>
