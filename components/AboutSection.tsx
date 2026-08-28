@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { AboutPhotoZoom } from './AboutPhotoZoom';
 
 const credentials = [
-  { icon: GraduationCap, title: 'Especialista em Direito Previdenciário', subtitle: 'PUC Minas' },
-  { icon: Award, title: 'Mais de 8 anos na área', subtitle: 'Atuação exclusiva desde 2018' },
+  { icon: Globe, title: 'Diretora Secretária Adjunta', subtitle: 'OAB Divinópolis · 2025-2027' },
   { icon: Landmark, title: 'Presidiu a Comissão de Previdenciário', subtitle: 'OAB Divinópolis · 2019–2024' },
-  { icon: Globe, title: 'Atendimento on-line', subtitle: 'Todo o Brasil, pelo WhatsApp' },
+  { icon: GraduationCap, title: 'Especialista em Direito Previdenciário', subtitle: 'PUC Minas' },
+  { icon: Award, title: 'Mais de 8 anos na área', subtitle: 'Atuação exclusiva desde 2018' }
 ];
 
 export function AboutSection() {
@@ -44,13 +44,12 @@ export function AboutSection() {
               Formada em Direito pela Universidade de Itaúna em 2015 e inscrita na OAB desde 2016. Especialista em Direito Previdenciário pela PUC Minas, atua exclusivamente nessa área desde 2018.
             </p>
             <p className="md:hidden">
-              Com escritório em Divinópolis/MG, atende clientes de todo o Brasil pelo WhatsApp. Seu trabalho inclui requerimentos administrativos, recursos, revisões e ações judiciais junto ao INSS, sempre com acompanhamento próximo e foco em resultados.
-            </p>
+              Com escritório em Divinópolis/MG, atende clientes de todo o Brasil pelo WhatsApp. Seu trabalho inclui requerimentos administrativos, recursos, revisões e ações judiciais contra o INSS e Regimes Próprios de Previdência Social, sempre com acompanhamento próximo e foco em resultados.            </p>
             <p className="hidden md:block">
               Formada em Direito pela Universidade de Itaúna em 2015 e inscrita na OAB desde 2016, a Dra. Bruna Teixeira é especialista em Direito Previdenciário pela PUC Minas. Atua exclusivamente nessa área desde 2018, com mais de 8 anos de dedicação.
             </p>
             <p className="hidden md:block">
-              Com escritório em Divinópolis/MG, atende clientes de todo o Brasil de forma ágil e personalizada, principalmente pelo WhatsApp. Seu trabalho abrange requerimentos administrativos, recursos, revisões e ações judiciais junto ao INSS, sempre com foco em resultados e acompanhamento próximo de cada caso.
+              Com escritório em Divinópolis/MG, atende clientes de todo o Brasil pelo WhatsApp. Seu trabalho inclui requerimentos administrativos, recursos, revisões e ações judiciais contra o INSS e Regimes Próprios de Previdência Social, sempre com acompanhamento próximo e foco em resultados.
             </p>
           </div>
 
@@ -71,7 +70,19 @@ export function AboutSection() {
               </div>
             ))}
           </div>
-
+          <div className="group col-span-2 mt-4 flex items-center gap-3 rounded-2xl border border-[#0A0A0A]/10 bg-white px-5 py-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#D1AD7D]/50 hover:shadow-[0_10px_24px_rgba(10,10,10,.07)]">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#D1AD7D]/20 text-[#A07E4A] transition-colors duration-300 group-hover:bg-[#D1AD7D]/30">
+              <Globe size={19} aria-hidden="true" />
+            </span>
+            <span className="flex flex-col">
+              <span className="font-['Display'] text-[14px] font-semibold leading-snug text-[#0A0A0A]">
+                Atendimento on-line
+              </span>
+              <span className="mt-0.5 text-[12px] font-medium leading-snug text-[#65706D]">
+                Todo o Brasil, pelo WhatsApp
+              </span>
+            </span>
+          </div>
           <Link
             className="mt-6 inline-flex items-center gap-3 border-b border-[#A07E4A] pb-2 text-[14px] font-medium text-[#A07E4A] transition-colors hover:text-[#0A0A0A] md:mt-7 md:text-[17px]"
             href="#atuacao"

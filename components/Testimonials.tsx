@@ -32,7 +32,7 @@ export function Testimonials() {
   const item = testimonials[current];
 
   return (
-    <section className="reveal-section bg-[#F3F3F3] px-6 py-20 md:px-[max(6vw,40px)] md:py-14 lg:py-24">
+    <section className="reveal-section bg-[#F3F3F3] px-6 pb-20 md:px-[max(6vw,40px)] md:py-14 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-16 lg:gap-24">
 
         <div className="reveal-item">

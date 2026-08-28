@@ -5,7 +5,7 @@ import { ContactForm } from './ContactForm';
 
 export function ContactSection() {
   return (
-    <section id="contato" className="reveal-section bg-[#F3F3F3] px-5.5 py-20 md:px-[max(6vw,40px)] md:py-18 lg:py-30">
+    <section id="contato" className="reveal-section bg-[#F3F3F3] px-5.5 pb-20 md:px-[max(6vw,40px)] md:py-18 lg:py-30">
       <div className="mx-auto grid max-w-7xl gap-14 md:grid-cols-2 md:gap-[clamp(60px,10vw,150px)]">
         <div className="reveal-item">
           <p className="mb-6.25 text-[12px] font-medium tracking-[0.12em] text-[#D1AD7D]">VAMOS CONVERSAR?</p><h2 className="mb-8 font-['Display'] text-[28px] font-semibold leading-[1.1] tracking-[-0.01em] text-[#0A0A0A] md:text-[40px]">Seu caso merece uma orientação <em className="italic text-[#D1AD7D]">cuidadosa.</em></h2><p className="max-w-[65ch] text-[16px] leading-[1.6] text-[#0A0A0A] md:text-[18px]">Preencha o formulário ou chame no WhatsApp. Retornaremos o mais breve possível.</p>
