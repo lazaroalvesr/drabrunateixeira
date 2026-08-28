@@ -12,32 +12,47 @@ function FacebookIcon() {
   );
 }
 
-export function ArticleShareButtons({ title }: { title: string }) {
+export function ArticleShareButtons({
+  title,
+  url,
+}: {
+  title: string;
+  url: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   const shareFacebook = () => {
-    const url = window.location.href;
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer,width=600,height=440');
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      '_blank',
+      'noopener,noreferrer,width=600,height=440'
+    );
   };
 
   const shareWhatsapp = () => {
-    const url = window.location.href;
-    window.open(`https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`, '_blank', 'noopener,noreferrer');
+    window.open(
+      `https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`,
+      '_blank',
+      'noopener,noreferrer'
+    );
   };
 
   const shareMore = async () => {
-    const url = window.location.href;
     if (navigator.share) {
       try {
-        await navigator.share({ title, url });
+        await navigator.share({
+          title,
+          url,
+        });
       } catch {
-        // usuário cancelou o compartilhamento — sem ação necessária
+        // usuário cancelou o compartilhamento
       }
       return;
     }
 
     await navigator.clipboard.writeText(url);
     setCopied(true);
+
     window.setTimeout(() => setCopied(false), 2000);
   };
 
@@ -58,7 +73,12 @@ export function ArticleShareButtons({ title }: { title: string }) {
         aria-label="Compartilhar no WhatsApp"
         className="flex h-14 cursor-pointer items-center justify-center rounded-xl bg-[#0A0A0A]/5 transition hover:bg-[#0A0A0A]/10"
       >
-        <Image src="/assets/Whatsapp-Icon-blog.png" alt="" width={22} height={22} />
+        <Image
+          src="/assets/Whatsapp-Icon-blog.png"
+          alt=""
+          width={22}
+          height={22}
+        />
       </button>
 
       <button
@@ -67,7 +87,11 @@ export function ArticleShareButtons({ title }: { title: string }) {
         aria-label="Mais opções de compartilhamento"
         className="flex h-14 cursor-pointer items-center justify-center rounded-xl bg-[#0A0A0A]/5 text-[#0A0A0A] transition hover:bg-[#0A0A0A]/10"
       >
-        {copied ? <span className="text-[12px] font-medium">Copiado!</span> : <Share2 size={19} strokeWidth={1.75} />}
+        {copied ? (
+          <span className="text-[12px] font-medium">Copiado!</span>
+        ) : (
+          <Share2 size={19} strokeWidth={1.75} />
+        )}
       </button>
     </div>
   );

@@ -91,7 +91,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             <div className="mt-10 border-t border-[#0A0A0A]/8 pt-8">
               <p className="mb-4 text-[12px] font-medium tracking-[0.12em] text-[#0A0A0A]">COMPARTILHE ESTE ARTIGO</p>
-              <ArticleShareButtons title={article.title} />
+              <ArticleShareButtons
+                title={article.title}
+                url={absoluteUrl(`/artigos/${article.slug}`)}
+              />
             </div>
           </div>
         </article>
