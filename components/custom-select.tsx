@@ -26,7 +26,7 @@ export function ContactForm() {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const listboxRef = useRef<HTMLDivElement>(null);
 
-  // Posicionamento inteligente: se não couber embaixo, abre para cima perfeitamente
+  // Posicionamento inteligente sem bugs de scroll
   useEffect(() => {
     if (!serviceMenuOpen) return;
 
@@ -38,7 +38,6 @@ export function ContactForm() {
       const spaceBelow = window.innerHeight - rect.bottom;
       const spaceAbove = rect.top;
 
-      // Se faltar espaço embaixo e houver mais espaço em cima, abre para cima
       const openUpwards = spaceBelow < dropdownHeight + 20 && spaceAbove > spaceBelow;
 
       if (openUpwards) {
@@ -57,12 +56,14 @@ export function ContactForm() {
     }
 
     updatePosition();
-    window.addEventListener('scroll', updatePosition, true);
     window.addEventListener('resize', updatePosition);
 
+    const handleScroll = () => setServiceMenuOpen(false);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
-      window.removeEventListener('scroll', updatePosition, true);
       window.removeEventListener('resize', updatePosition);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [serviceMenuOpen]);
 
@@ -163,7 +164,7 @@ export function ContactForm() {
                 left: coords.left,
                 width: coords.width,
               }}
-              className="max-h-62.5 overflow-y-auto overflow-x-hidden rounded-lg border border-[#D1AD7D] bg-[#fffdf9] p-1.5 shadow-[0_14px_28px_rgba(10,10,10,.14)]"
+              className="z-99999 max-h-62.5 overflow-y-auto overflow-x-hidden rounded-lg border border-[#D1AD7D] bg-[#fffdf9] p-1.5 shadow-[0_14px_28px_rgba(10,10,10,.14)]"
             >
               {contactServiceOptions.map((option) => (
                 <button

@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { practiceAreas } from '../data/practice-areas';
+import { contactDetails } from '../app/site-config';
+
+function buildWhatsAppLink(areaTitle: string) {
+  const mensagem = `Olá, vim pelo site e gostaria de tirar uma dúvida sobre ${areaTitle}`;
+  return `https://wa.me/${contactDetails.whatsappNumber}?text=${encodeURIComponent(mensagem)}`;
+}
 
 export function PracticeAreasSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -21,7 +26,6 @@ export function PracticeAreasSection() {
         <div className="reveal-item reveal-delay-2 border-y border-white/10">
           {practiceAreas.map((area, index) => {
             const isOpen = openIndex === index;
-
             return (  
               <div key={area.title} className={index !== 0 ? 'border-t border-white/10' : ''}>
                 <button
@@ -43,9 +47,14 @@ export function PracticeAreasSection() {
                   <div className="overflow-hidden">
                     <div className="max-w-165 pb-7 pl-16 md:pb-8 md:pl-24">
                       <p className="text-[14px] leading-[1.6] text-white/65 md:text-[15px]">{area.description}</p>
-                      <Link className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-[#D1AD7D] transition-colors hover:text-white" href="#contato" data-smooth-scroll>
+                      <a
+                        className="mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-[#D1AD7D] transition-colors hover:text-white"
+                        href={buildWhatsAppLink(area.title)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Falar sobre isso <span aria-hidden="true">→</span>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>

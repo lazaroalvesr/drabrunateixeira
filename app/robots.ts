@@ -1,9 +1,13 @@
-import type { MetadataRoute } from 'next';
-import { absoluteUrl } from './site-config';
+import { MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: '*', allow: '/' },
-    sitemap: absoluteUrl('/sitemap.xml'),
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
+    sitemap: 'https://brunateixeiraadv.com.br/sitemap.xml',
   };
 }
